@@ -1,15 +1,27 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-graylog2-go-gelf
+Section: devel
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Tianon Gravi <tianon@debian.org>,
+           Tim Potter <tpot@hpe.com>,
+           Dmitry Smirnov <onlyjob@debian.org>,
+Build-Depends: debhelper (>= 12~)
+    ,dh-golang
+    ,golang-any
+Standards-Version: 4.4.1
+Homepage: https://github.com/Graylog2/go-gelf
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-graylog2-go-gelf
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-graylog2-go-gelf.git
+XS-Go-Import-Path: github.com/Graylog2/go-gelf
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-graylog2-go-gelf-dev
+Architecture: all
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: GELF library and writer for Go
+ GELF is graylog2's UDP logging format. This library provides an API that
+ applications can use to log messages directly to a graylog2 server, along with
+ an io.Writer that can be use to redirect the standard library's log messages
+ (or os.Stdout), to a graylog2 server.
+ .
+ This package contains the source.
